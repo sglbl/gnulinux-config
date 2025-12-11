@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rclone mount onedrive: ~/OneDrive --vfs-cache-mode writes &

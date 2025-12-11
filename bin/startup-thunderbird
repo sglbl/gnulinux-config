@@ -1,0 +1,11 @@
+#!/bin/bash
+thunderbird &
+while true; do
+    sleep 1
+    w=$(xdotool search --onlyvisible --name "Mozilla Thunderbird")
+    if [ ! -z "$w" ]; then
+        echo "minimizing $w"
+        xdotool windowminimize $w
+        break
+    fi
+done

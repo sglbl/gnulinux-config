@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Notion
+Comment=Notion web app
+Exec=google-chrome-stable --app="https://notion.so/sglbl" --class=WebApp-Notion2225 --name=WebApp-Notion2225
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/sglbl/.local/share/applications/icons/notion.png
+Categories=GTK;WebApps;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-Notion2225
+StartupNotify=true
+X-WebApp-Browser=Chrome
+X-WebApp-URL=https://notion.so/sglbl
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=false
+

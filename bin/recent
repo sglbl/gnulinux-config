@@ -1,0 +1,30 @@
+#!/bin/bash
+# ~/bin/recent2 — GUI version using rofi, works with shortcut
+
+RECENT="$HOME/.local/share/recently-used.xbel"
+
+mapfile -t entries < <(xmlstarlet sel -t -m '//bookmark[@visited]' \
+  -v '@visited' -o '|' -v '@href' -n "$RECENT" 2>/dev/null)
+
+declare -A seen
+output=()
+
+for entry in "${entries[@]}"; do
+    ts="${entry%%|*}"
+    href="${entry#*|}"
+    path="${href#file://}"
+    path="${path%%.desktop}"
+    path="${path%%.docx}"
+    path="${path%%.pdf}"
+    path="${path%%.txt}"
+    dir="${path%/*}"
+    [[ -z "$dir" || "$dir" == "/" || "$dir" == "trash:///" ]] && continue
+    [[ -n "${seen[$dir]}" ]] && continue
+    seen["$dir"]=1
+    output+=("$ts|$dir")
+done
+
+# show GUI menu using rofi
+folder=$(printf '%s\n' "${output[@]}" | sort -r | cut -d'|' -f2 | head -n 20 | rofi -dmenu -p "Recent folders> ")
+
+[ -n "$folder" ] && nautilus "$folder"

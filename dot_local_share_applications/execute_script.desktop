@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=bash -c 'bash "%f"; $SHELL'
+Name=Script Executor
+Terminal=true
+Type=Application
+Icon=/home/sglbl/.local/share/applications/icons/executor.png
+MimeType=application/x-shellscript;text/x-shellscript;

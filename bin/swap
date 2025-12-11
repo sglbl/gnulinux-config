@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo " PID     SWAP(MB)  NAME"
+for pid in /proc/[0-9]*; do
+  [ -r "$pid/status" ] || continue
+  awk -v pid="${pid##*/}" '
+    BEGIN { swap=0; name=""; }
+    /^Name:/   { name=$2 }
+    /^VmSwap:/  { swap=$2 }
+    END { printf "%6s %9.2f   %s\n", pid, swap/1024, name }
+  ' "$pid/status"
+done | sort -k2 -nr | head -n 20

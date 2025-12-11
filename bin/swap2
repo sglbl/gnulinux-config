@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if ! awk 'END{}' /proc/1/smaps &>/dev/null; then
+    echo "Some processes require root privileges. Asking for sudo..."
+    exec sudo bash "$0" "$@"
+fi
+
+echo " PID     USER       SWAP(MB)  NAME"
+
+for pid in /proc/[0-9]*; do
+  [ -r "$pid/smaps" ] || continue
+  [ -r "$pid/status" ] || continue
+
+  name=$(awk '/^Name:/ {print $2}' "$pid/status" 2>/dev/null)
+  uid=$(awk '/^Uid:/ {print $2}' "$pid/status" 2>/dev/null)
+  user=$(getent passwd "$uid" | cut -d: -f1)
+
+  swap_kb=$(awk '/Swap:/ {s+=$2} END {print s+0}' "$pid/smaps" 2>/dev/null)
+  swap_kb=${swap_kb:-0}
+
+  if [ "$swap_kb" -gt 0 ] 2>/dev/null; then
+    printf "%6s %-10s %9.2f   %s\n" "${pid##*/}" "$user" "$((swap_kb/1024))" "$name"
+  fi
+done | sort -k3 -nr | head -n 20
+
+awk '/SwapTotal/ {total=$2} /SwapFree/ {free=$2} END {printf "\nTotal system swap used: %.2f MB\n", (total-free)/1024}' /proc/meminfo
