@@ -21,6 +21,8 @@ Personal configuration files and utility scripts for a [GNU/Linux](https://sglbl
 
 ## 🛠️ Scripts (`bin/`)
 
+> **Note:** Since `~/bin` is added to `PATH` via `.bashrc`, all scripts can also be run directly from the terminal (e.g., `swap`, `recent`).
+
 | Script | Description |
 |--------|-------------|
 | `set-shortcuts.sh` | Configure GNOME custom keyboard shortcuts |
@@ -33,6 +35,7 @@ Personal configuration files and utility scripts for a [GNU/Linux](https://sglbl
 | `startup-signal` | Signal messenger startup script (minimized to tray) |
 | `startup-thunderbird` | Thunderbird startup script (minimized to tray) |
 | `OneDrive` | OneDrive sync helper (on the background) |
+| `increase-swap.sh` | Increase swap size to 16 GB and make it permanent |
 
 ---
 
