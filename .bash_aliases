@@ -29,6 +29,7 @@ alias hg="gnome-terminal --window --maximize -- bash -ic 'ghd; exec bash'"
 
 # Onion Architecture
 alias cdm="cd src/presentation/ui/mobile"
+alias cdw="cd src/presentation/ui/web"
 
 # Npm
 
