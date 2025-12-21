@@ -124,48 +124,61 @@ function ssh_alias() {
 
 alias ssh=ssh_alias
 
-# Project Specific
-export LD_LIBRARY_PATH=$HOME/deduce/gaesa/data/bin/oracle/instantclient_23_26:$LD_LIBRARY_PATH
-
-
+# ---------------------------
+# Terminal Specific
+# ---------------------------
 bind "set completion-ignore-case On"
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 # ---------------------------
 # Local user binaries
 # ---------------------------
+
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # ---------------------------
+# Heavy PATH rebuilders FIRST
+# ---------------------------
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+. "$HOME/.cargo/env"
+
+
+# ---------------------------
+# Project Specific
+# ---------------------------
+
+export LD_LIBRARY_PATH=$HOME/deduce/gaesa/data/bin/oracle/instantclient_23_26:$LD_LIBRARY_PATH
+
+# ---------------------------
 # Global Gradle
 # ---------------------------
+
 export GRADLE_HOME=$HOME/development/gradle/gradle-8.14.3
 export PATH=$GRADLE_HOME/bin:$PATH
 
 # ---------------------------
 # Flutter & Android
 # ---------------------------
-export PATH=$HOME/development/flutter/bin:$PATH
+
 export PATH=$HOME/development/android-studio/bin:$PATH
+export PATH=$HOME/development/flutter/bin:$PATH
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 
 # ---------------------------
-# Pnpm
+# Python env auto-activation (uv)
 # ---------------------------
-export PNPM_HOME="/home/sglbl/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 
-
-# Auto-activate project .venv if it exists, else uv base
 if [ -x "$PWD/.venv/bin/python" ]; then
-    # Force activation of current folder .venv
     deactivate 2>/dev/null || true
     source "$PWD/.venv/bin/activate"
 else
@@ -173,8 +186,10 @@ else
         source ~/.local/share/uv/environments/base/bin/activate
     fi
 fi
-export PATH="$PATH:/app/lib/010editor" #ADDED BY 010 EDITOR
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ---------------------------
+# Duplicate removing from path
+# ---------------------------
+
+PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
+export PATH
