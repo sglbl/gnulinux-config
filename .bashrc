@@ -155,7 +155,11 @@ export NVM_DIR="$HOME/.nvm"
 # Project Specific
 # ---------------------------
 
-export LD_LIBRARY_PATH=$HOME/deduce/gaesa/data/bin/oracle/instantclient_23_26:$LD_LIBRARY_PATH
+# Only add Oracle Instant Client to path if the directory exists
+IF_ORACLE_PATH="$HOME/deduce/gaesa/data/bin/oracle/instantclient_23_26"
+if [ -d "$IF_ORACLE_PATH" ]; then
+    export LD_LIBRARY_PATH="$IF_ORACLE_PATH${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+fi
 
 # ---------------------------
 # Global Gradle
