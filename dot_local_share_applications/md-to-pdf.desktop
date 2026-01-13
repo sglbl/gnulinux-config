@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Markdown to PDF
+Exec=/home/sglbl/.local/share/uv/environments/base/bin/python3 /home/sglbl/bin/md_to_pdf_converter.py
+Icon=accessories-text-editor
+Terminal=false
+Categories=Utility;
