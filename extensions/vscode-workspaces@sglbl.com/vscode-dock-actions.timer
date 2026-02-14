@@ -1,0 +1,13 @@
+[Unit]
+Description=Periodically update VS Code dock right-click actions
+
+[Timer]
+# Run 30 seconds after boot
+OnBootSec=30
+# Then every 1 hour
+OnUnitActiveSec=1h
+# Avoid waking up the system just for this
+Persistent=false
+
+[Install]
+WantedBy=timers.target

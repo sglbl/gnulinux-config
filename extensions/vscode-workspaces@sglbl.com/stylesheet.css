@@ -1,0 +1,164 @@
+/* A button for toggling favorites */
+.vscws-icon-button {
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+
+    /* Make text/icon transitions smooth */
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+
+    /* Prevent text selection/highlights on click */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+
+    /* Align icon nicely with text */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.vscws-icon-button:hover,
+.vscws-icon-button:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.vscws-trash-icon {
+    color: inherit;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+
+    vertical-align: middle;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    width: 16px;
+    height: 16px;
+    font-size: 1.2em;
+    color: #999;
+    transition: color 0.2s ease;
+}
+
+.vscws-icon-button:hover .vscws-trash-icon {
+    color: red;
+    transition: color 0.2s;
+}
+
+/* The star icon itself */
+.vscws-favorite-icon {
+    color: inherit;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    width: 16px;
+    height: 16px;
+    font-size: 1.2em;
+    color: #999;
+    transition: color 0.2s ease;
+}
+
+/* If the item is actually favorited, keep it gold even when not hovering */
+.vscws-favorite-icon.is-favorited {
+    color: #ffd700;
+}
+
+.vscws-icon-button:hover .vscws-favorite-icon {
+    color: #ffd700;
+}
+
+/* A horizontal container for label + favorite/trash icons */
+.vscws-workspace-box {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 0.2s;
+}
+
+.vscws-workspace-box:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.vscws-workspace-combo-button {
+    margin-top: 10px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+
+    transition: color 0.2s;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Tooltip styling for Recent Workspaces */
+.vscws-workspace-tooltip {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 1000;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+}
+
+.vscws-workspace-tooltip.show {
+    opacity: 1;
+}
+
+.vscws-workspace-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+}
+
+.vscws-menu-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}

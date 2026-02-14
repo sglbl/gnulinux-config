@@ -1,0 +1,11 @@
+[Unit]
+Description=Update VS Code dock right-click actions with recent workspaces
+Documentation=https://github.com/sglbl/vscode-workspaces
+
+[Service]
+Type=oneshot
+ExecStart=/home/sglbl/.local/share/gnome-shell/extensions/vscode-workspaces@sglbl.com/update-dock-actions.sh
+Environment=HOME=/home/sglbl
+
+[Install]
+WantedBy=default.target

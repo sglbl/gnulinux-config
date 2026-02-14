@@ -1,0 +1,17 @@
+{
+  "description": "A VSCode/Codium Workspace management tool-set for GNOME - This extension is not affiliated, funded, or in any way associated with Microsoft and vscode software. It's a fork of ZanzyTHEbar",
+  "donations": {
+    "github": "sglbl"
+  },
+  "name": "VSCode Workspaces",
+  "settings-schema": "org.gnome.shell.extensions.vscode-workspaces",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48"
+  ],
+  "url": "https://github.com/sglbl/vscode-workspaces",
+  "uuid": "vscode-workspaces@sglbl.com",
+  "version": 16
+}
