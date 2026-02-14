@@ -1,2 +1,11 @@
 #!/usr/bin/env bash
-rclone mount onedrive: ~/OneDrive --vfs-cache-mode writes &
+sh -c "rclone bisync onedrive: ~/OneDrive"
+
+# Initially do this once:
+# rclone bisync onedrive: ~/OneDrive --resync --log-level DEBUG --progress --stats-one-line --transfers 4 --checkers 4 --tpslimit 3
+
+# rclone bisync onedrive: ~/OneDrive --resync -P --transfers 8 --checkers 16 --ignore-times
+
+
+# without bloating logs
+# sh -c "rclone bisync onedrive: ~/OneDrive --check-access --log-level ERROR"

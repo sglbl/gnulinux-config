@@ -5,7 +5,7 @@ shortcuts=(
   "custom0|Copyq Clipboard|copyq menu|<Super>v"
   "custom1|Recent Folders Rofi GUI|recent|<Ctrl><Alt>e"
   'custom2|Recent Folders Fzf Terminal|gnome-terminal -- bash -c "recent2; exec bash"|<Ctrl><Alt>e'
-  "custom3|Screenshot with Flameshot|flameshot gui|<Ctrl><Shift>comma"
+  "custom3|Screenshot with Flameshot|/bin/sh -c '/usr/bin/flameshot gui'|<Ctrl><Shift>comma"
   "custom4|Emoji|flatpak run --command=smile it.mijorus.smile|<Super>period"
 )
 
