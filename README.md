@@ -2,7 +2,7 @@
 
 <img src="dot_local_share_applications/icons/gnulinux.png" width="200">
 
-Personal configuration files and utility scripts for a [GNU/Linux](https://sglbl.notion.site/linux) setup. (Recommended: [Zorin OS](https://zorin.com/os/))
+Personal configuration files and utility scripts for a [GNU/Linux setup](https://sglbl.notion.site/linux). (Recommended: [Zorin OS](https://zorin.com/os/))
 
 ---
 
@@ -48,6 +48,23 @@ Custom `.desktop` files to register applications and file handlers in the GNOME/
 | `WebApp-Notion2225.desktop` | Launches Notion as a standalone Chrome web app (no browser tabs/navbar) |
 | `execute_script.desktop` | Executes shell scripts by double-clicking |
 | `url_opener.desktop` | Opens Windows `.url` shortcut files in the default browser |
+
+---
+
+## 🧩 GNOME Extensions (`extensions/`)
+
+My personal collection of GNOME Shell extensions.
+
+| Extension | Description |
+|-----------|-------------|
+| **App menu is back** | The good old original app menu. Uses native GNOME Shell button. |
+| **GNOME Fuzzy App Search** | Fuzzy application search results for Gnome Search. |
+| **Grand Theft Focus** | No more 'Window is ready' notification; brings window into focus immediately. |
+| **Multi Monitors Add-On** | Add multiple monitors overview and panel support. |
+| **Net speed Simplified** | Customizable net speed indicator. |
+| **Notification Banner Reloaded** | Configure notification banner position and animation. |
+| **Tweaks & Extensions in System Menu** | Access Tweaks and Extensions directly from the System Menu. |
+| **VSCode Workspaces** | VS Code workspace management tool-set for GNOME. |
 
 ---
 

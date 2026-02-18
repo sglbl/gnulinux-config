@@ -155,11 +155,7 @@ export NVM_DIR="$HOME/.nvm"
 # Project Specific
 # ---------------------------
 
-# Only add Oracle Instant Client to path if the directory exists
-IF_ORACLE_PATH="$HOME/deduce/gaesa/data/bin/oracle/instantclient_23_26"
-if [ -d "$IF_ORACLE_PATH" ]; then
-    export LD_LIBRARY_PATH="$IF_ORACLE_PATH${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-fi
+export LD_LIBRARY_PATH=$HOME/deduce/gaesa/data/bin/oracle/instantclient_23_26:$LD_LIBRARY_PATH
 
 # ---------------------------
 # Global Gradle
@@ -172,8 +168,8 @@ export PATH=$GRADLE_HOME/bin:$PATH
 # Flutter & Android
 # ---------------------------
 
-export PATH=$HOME/development/android-studio/bin:$PATH
 export PATH=$HOME/development/flutter/bin:$PATH
+export PATH=$HOME/development/android-studio/bin:$PATH
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
@@ -197,3 +193,6 @@ fi
 
 PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 export PATH
+
+# Use Podman 
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
