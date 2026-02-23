@@ -7,10 +7,10 @@ Icon=/home/sglbl/.local/share/applications/icons/url.png
 
 # Exec breakdown:
 # bash -c '…'       → run a bash command
-# sed -n "s/^URL=//p" "$1" → extract the URL from the .url file passed as $1
-# xdg-open "$url"    → open the extracted URL in the default browser
-# _ %f               → _ is $0 placeholder, %f is the filename of the .url file
-Exec=bash -c 'xdg-open "$(sed -n "s/^URL=//p" "$1")"' _ %f
+# grep/sed/tr       → extract URL handling both .url format and plain text URLs
+# xdg-open "$url"   → open the extracted URL in the default browser
+# _ %f              → _ is $0 placeholder, %f is the filename of the input file
+Exec=bash -c 'xdg-open "$(grep -Eom1 "^URL=.*|^https?://.*" "$1" | sed "s/^URL=//" | tr -d "\r")"' _ %f
 
 MimeType=application/x-mswinurl;
 NoDisplay=false
