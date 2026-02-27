@@ -16,6 +16,7 @@ Personal configuration files and utility scripts for a [GNU/Linux setup](https:/
 | `.XCompose` | `~/.XCompose` | Custom compose key sequences |
 | `dot_local_share_applications/` | `~/.local/share/applications/` | Desktop entries & icons |
 | `app_config/` | Application settings | Application-specific configs |
+| `home_icons/` | `~/home_icons/` | Custom icons for home directory folders |
 
 ---
 
@@ -67,6 +68,25 @@ My personal collection of GNOME Shell extensions.
 | **VSCode Workspaces** | VS Code workspace management tool-set for GNOME. |
 
 ---
+
+## 🏠 Home Folder Icons (`home_icons/`)
+
+Custom icons for home directory places, applied via `gio` metadata.
+
+### Usage
+
+Place icon files (`.svg` or `.png`) in the `home_icons/` directory if it's not placed yet, named after the target folder in lowercase (e.g., `appimages.svg` for `~/AppImages`). Then run:
+
+```bash
+cd home_icons/
+bash set_icons.sh
+```
+
+The script iterates over all folders in `$HOME` and assigns a matching icon if one exists. After running, restart Nautilus to see the changes:
+
+---
+
+Note: Since some of the files in the config might contain absolute paths that refer to username 'sglbl', you can replace all matches with your username after cloning/forking the repository.
 
 ## 📝 License
 
