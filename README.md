@@ -36,6 +36,7 @@ Personal configuration files and utility scripts for a [GNU/Linux setup](https:/
 | `startup-signal` | Signal messenger startup script (minimized to tray) |
 | `startup-thunderbird` | Thunderbird startup script (minimized to tray) |
 | `OneDrive` | OneDrive sync helper (on the background) |
+| `GoogleDrive` | Google Drive sync helper (on the background) |
 | `increase-swap.sh` | Increase swap size to 16 GB and make it permanent |
 
 ---

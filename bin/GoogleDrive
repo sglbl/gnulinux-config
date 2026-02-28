@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+SYNC_INTERVAL=600  # seconds (10 minutes)
+
+# in case of error: add these to bisync command: --drive-acknowledge-abuse --transfers 4 --checkers 4 --tpslimit 3
+
+while true; do
+    rclone bisync gdrive: ~/GoogleDrive
+    sleep $SYNC_INTERVAL
+done
+
+
+# -------------------------------------------------------------
+# README: Configuration steps
+# -------------------------------------------------------------
+# 1. Run `rclone config`
+# 2. Press 'n' to create a New remote
+# 3. Enter name: `gdrive`
+# 4. Choose Storage option for Google Drive (e.g., enter '22' if it's in there)
+# 5. Leave `client_id` blank (press Enter)
+# 6. Leave `client_secret` blank (press Enter)
+# 7. Choose scope `drive` (e.g., enter '1' for full access)
+# 8. Leave `service_account_file` blank (press Enter)
+# 9. Press 'n' for "Edit advanced config?"
+# 10. Press 'y' to "Use web browser to automatically authenticate"
+# 11. Authenticate in your web browser
+# 12. Press 'n' for "Configure this as a Shared Drive (Team Drive)?"
+# 13. Press 'y' to "Keep this remote"
+# 14. Press 'q' to "Quit config"
+# 15. Create folder with `mkdir ~/GoogleDrive`
+# 16. If "Bisync aborted", run this command once to recover:
+# rclone bisync gdrive: ~/GoogleDrive --resync -P --transfers 4 --checkers 4 --tpslimit 3 --ignore-times --drive-acknowledge-abuse
