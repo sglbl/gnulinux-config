@@ -10,50 +10,51 @@ Personal configuration files and utility scripts for a [GNU/Linux setup](https:/
 
 | Path | Destination | Description |
 |------|-------------|-------------|
-| `bin/` | `~/bin/` | Custom utility scripts |
-| `.bashrc` | `~/.bashrc` | Bash configuration and path settings |
-| `.bash_aliases` | `~/.bash_aliases` | Aliases and shortcuts |
-| `.XCompose` | `~/.XCompose` | Custom compose key sequences |
-| `dot_local_share_applications/` | `~/.local/share/applications/` | Desktop entries & icons |
-| `app_config/` | Application settings | Application-specific configs |
-| `home_icons/` | `~/home_icons/` | Custom icons for home directory folders |
+| [`bin/`](bin/) | `~/bin/` | Custom utility scripts |
+| [`.bashrc`](.bashrc) | `~/.bashrc` | Bash configuration and path settings |
+| [`.bash_aliases`](.bash_aliases) | `~/.bash_aliases` | Aliases and shortcuts |
+| [`.XCompose`](.XCompose) | `~/.XCompose` | Custom compose key sequences |
+| [`dot_local_share_applications/`](dot_local_share_applications/) | `~/.local/share/applications/` | Desktop entries & icons |
+| [`dot_config/`](dot_config/) | `~/.config/dconf` | Desktop environment configuration |
+| [`app_config/`](app_config/) | Application settings | Application-specific configs |
+| [`home_icons/`](home_icons/) | Custom folder | Custom icons for home directory folders |
 
 ---
 
-## 🛠️ Scripts (`bin/`)
+## 🛠️ Scripts ([`bin/`](bin/))
 
 > **Note:** Since `~/bin` is added to `PATH` via `.bashrc`, all scripts can also be run directly from the terminal (e.g., `swap`, `recent`).
 
 | Script | Description |
 |--------|-------------|
-| `set-shortcuts.sh` | Configure GNOME custom keyboard shortcuts |
-| `recent` | GUI folder picker using rofi for recently accessed directories |
-| `recent-fzf` | Terminal-based recent folder picker using fzf (fuzzy finder) |
-| `swap` | Display top 20 processes by swap usage |
-| `swap2` | Swap monitoring script including docker and other virtualized containers |
-| `btautoconnect.sh` | Auto-connect Bluetooth devices on startup |
-| `fix-capslock-delay.sh` | Fix capslock key delay issues that comes with Linux |
-| `startup-signal` | Signal messenger startup script (minimized to tray) |
-| `startup-thunderbird` | Thunderbird startup script (minimized to tray) |
-| `OneDrive` | OneDrive sync helper (on the background) |
-| `GoogleDrive` | Google Drive sync helper (on the background) |
-| `increase-swap.sh` | Increase swap size to 16 GB and make it permanent |
+| [`set-shortcuts.sh`](bin/set-shortcuts.sh) | Configure GNOME custom keyboard shortcuts |
+| [`recent`](bin/recent) | GUI folder picker using rofi for recently accessed directories |
+| [`recent-fzf`](bin/recent-fzf) | Terminal-based recent folder picker using fzf (fuzzy finder) |
+| [`swap`](bin/swap) | Display top 20 processes by swap usage |
+| [`swap2`](bin/swap2) | Swap monitoring script including docker and other virtualized containers |
+| [`btautoconnect.sh`](bin/btautoconnect.sh) | Auto-connect Bluetooth devices on startup |
+| [`fix-capslock-delay.sh`](bin/fix-capslock-delay.sh) | Fix capslock key delay issues that comes with Linux |
+| [`startup-signal`](bin/startup-signal) | Signal messenger startup script (minimized to tray) |
+| [`startup-thunderbird`](bin/startup-thunderbird) | Thunderbird startup script (minimized to tray) |
+| [`OneDrive`](bin/OneDrive) | OneDrive sync helper (on the background) |
+| [`GoogleDrive`](bin/GoogleDrive) | Google Drive sync helper (on the background) |
+| [`increase-swap.sh`](bin/increase-swap.sh) | Increase swap size to 16 GB and make it permanent |
 
 ---
 
-## 🖥️ Desktop Entries (`~/.local/share/applications/`)
+## 🖥️ Desktop Entries ([`dot_local_share_applications/`](dot_local_share_applications/))
 
 Custom `.desktop` files to register applications and file handlers in the GNOME/Linux desktop environment.
 
 | Entry | Purpose |
-|-------|---------|
-| `WebApp-Notion2225.desktop` | Launches Notion as a standalone Chrome web app (no browser tabs/navbar) |
-| `execute_script.desktop` | Executes shell scripts by double-clicking |
-| `url_opener.desktop` | Opens Windows `.url` shortcut files in the default browser |
+|-------|---------| 
+| [`WebApp-Notion2225.desktop`](dot_local_share_applications/WebApp-Notion2225.desktop) | Launches Notion as a standalone Chrome web app (no browser tabs/navbar) |
+| [`execute_script.desktop`](dot_local_share_applications/execute_script.desktop) | Executes shell scripts by double-clicking |
+| [`url_opener.desktop`](dot_local_share_applications/url_opener.desktop) | Opens Windows `.url` shortcut files in the default browser |
 
 ---
 
-## 🧩 GNOME Extensions (`extensions/`)
+## 🧩 GNOME Extensions ([`extensions/`](extensions/))
 
 My personal collection of GNOME Shell extensions.
 
@@ -63,14 +64,22 @@ My personal collection of GNOME Shell extensions.
 | **GNOME Fuzzy App Search** | Fuzzy application search results for Gnome Search. |
 | **Grand Theft Focus** | No more 'Window is ready' notification; brings window into focus immediately. |
 | **Multi Monitors Add-On** | Add multiple monitors overview and panel support. |
-| **Net speed Simplified** | Customizable net speed indicator. |
 | **Notification Banner Reloaded** | Configure notification banner position and animation. |
 | **Tweaks & Extensions in System Menu** | Access Tweaks and Extensions directly from the System Menu. |
 | **VSCode Workspaces** | VS Code workspace management tool-set for GNOME. |
 
 ---
 
-## 🏠 Home Folder Icons (`home_icons/`)
+## 🎬 Boot Animation ([`sglbl-logo-animation/`](sglbl-logo-animation/))
+
+Custom Plymouth boot splash theme with animated logo.  
+<p align="left">
+  <img src="sglbl-logo-animation/view.gif" alt="sglbl logo animation" width="350">
+</p>
+
+---
+
+## 🏠 Home Folder Icons ([`home_icons/`](home_icons/))
 
 Custom icons for home directory places, applied via `gio` metadata.
 
@@ -87,7 +96,7 @@ The script iterates over all folders in `$HOME` and assigns a matching icon if o
 
 ---
 
-Note: Since some of the files in the config might contain absolute paths that refer to username 'sglbl', you can replace all matches with your username after cloning/forking the repository.
+Note: Since some of the files in the config might contain absolute paths that refer to username 'sglbl', you can replace all matches with your username on VSCode after cloning/forking the repository.
 
 ## 📝 License
 
