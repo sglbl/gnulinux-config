@@ -12,8 +12,8 @@ for folder_path in "$HOME_DIR"/*; do
     for ext in svg png; do
         icon_file="$SCRIPT_DIR/$icon_name.$ext"
         if [ -f "$icon_file" ]; then
-            # gio set "$folder_path" metadata::custom-icon "file://$SCRIPT_DIR/$icon_name.$ext"
-            gio set "$folder_path" metadata::custom-icon "file:///usr/share/icons/ZorinBlue-Dark/512x512/mimetypes/inode-directory.png"
+            gio set "$folder_path" metadata::custom-icon "file://$SCRIPT_DIR/$icon_name.$ext"
+            # gio set "$folder_path" metadata::custom-icon "file:///usr/share/icons/ZorinBlue-Dark/512x512/mimetypes/inode-directory.png"
 
             # Add icon support for Dolphin (using KDE-native config writer)
             kwriteconfig5 --file "$folder_path/.directory" --group "Desktop Entry" --key "Icon" "$icon_file"
