@@ -188,7 +188,7 @@ else
 fi
 
 # ---------------------------
-# Duplicate removing from path
+# Removing duplicates from path (use listpath command defines in .bash_aliases to list the path)
 # ---------------------------
 
 PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
