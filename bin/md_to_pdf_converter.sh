@@ -1,5 +1,4 @@
 #!/home/sglbl/.local/share/uv/environments/base/bin/python3
-
 import os
 import sys
 import subprocess
