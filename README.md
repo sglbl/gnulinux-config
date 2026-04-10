@@ -16,7 +16,7 @@ Personal configuration files and utility scripts for a [GNU/Linux setup](https:/
 | [`.XCompose`](.XCompose) | `~/.XCompose` | Custom compose key sequences |
 | [`dot_local_share_applications/`](dot_local_share_applications/) | `~/.local/share/applications/` | Desktop entries & icons |
 | [`dot_icons/`](dot_icons/) | `~/.icons/` | Icons for file extensions and sidebar (nautilus, dolphin..) |
-| [`dot_config/`](dot_config/) | `~/.config/dconf` | Desktop environment configuration |
+| [`dot_config/`](dot_config/) | `~/.config/` | Desktop environment configuration (dconf, kvantum kvarc theme..) |
 | [`app_config/`](app_config/) | Application settings | Application-specific configs |
 | [`home_icons/`](home_icons/) | Custom folder | Custom icons for home directory folders |
 
