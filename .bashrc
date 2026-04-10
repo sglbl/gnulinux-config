@@ -187,12 +187,16 @@ else
     fi
 fi
 
+# Use Podman 
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+
+# opencode
+export PATH=/home/sglbl/.opencode/bin:$PATH
+
+
 # ---------------------------
 # Removing duplicates from path (use listpath command defines in .bash_aliases to list the path)
 # ---------------------------
 
 PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 export PATH
-
-# Use Podman 
-export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
