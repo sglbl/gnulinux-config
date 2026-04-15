@@ -93,7 +93,13 @@ cd home_icons/
 bash set_icons.sh
 ```
 
-The script iterates over all folders in `$HOME` and assigns a matching icon if one exists. After running, restart Nautilus to see the changes:
+The script iterates over all folders in `$HOME` and assigns a matching icon if one exists. After running, restart Nautilus to see the changes.
+
+If you also want to change menu logo, replace with your menu logo svg and run the following command:
+
+```bash
+sudo cp dot_icons/menu_logo.svg /usr/share/gnome-shell/extensions/zorin-menu@zorinos.com/zorin-icon-symbolic.svg
+```
 
 ---
 
