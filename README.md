@@ -2,7 +2,7 @@
 
 <img src="dot_local_share_applications/icons/gnulinux.png" width="200">
 
-Personal configuration files and utility scripts for a [GNU/Linux setup](https://sglbl.notion.site/linux). (Recommended: [Zorin OS](https://zorin.com/os/))
+Personal configuration files and utility scripts for a [GNU/Linux setup](https://sglbl.notion.site/linuxsetup). (Recommended: [Zorin OS](https://zorin.com/os/))
 
 ---
 
@@ -15,10 +15,10 @@ Personal configuration files and utility scripts for a [GNU/Linux setup](https:/
 | [`.bash_aliases`](.bash_aliases) | `~/.bash_aliases` | Aliases and shortcuts |
 | [`.XCompose`](.XCompose) | `~/.XCompose` | Custom compose key sequences |
 | [`dot_local_share_applications/`](dot_local_share_applications/) | `~/.local/share/applications/` | Desktop entries & icons |
-| [`dot_icons/`](dot_icons/) | `~/.icons/` | Icons for file extensions and sidebar (nautilus, dolphin..) |
+| [`dot_icons/`](dot_icons/) | `~/.icons/` | Icons for file extensions and sidebar (nautilus, dolphin..) + home icons |
 | [`dot_config/`](dot_config/) | `~/.config/` | Desktop environment configuration (dconf, kvantum kvarc theme..) |
+| [`usr_share_plymouth/`](usr_share_plymouth/themes/sglbl-logo-animation) | `/usr/share/plymouth` | Custom boot splash animation |
 | [`app_config/`](app_config/) | Application settings | Application-specific configs |
-| [`home_icons/`](home_icons/) | Custom folder | Custom icons for home directory folders |
 
 ---
 
@@ -71,16 +71,16 @@ My personal collection of GNOME Shell extensions.
 
 ---
 
-## 🎬 Boot Animation ([`sglbl-logo-animation/`](sglbl-logo-animation/))
+## 🎬 Boot Animation ([`sglbl-logo-animation/`](usr_share_plymouth/themes/sglbl-logo-animation))
 
 Custom Plymouth boot splash theme with animated logo.  
 <p align="left">
-  <img src="sglbl-logo-animation/view.gif" alt="sglbl logo animation" width="350">
+  <img src="usr_share_plymouth/themes/sglbl-logo-animation/view.gif" alt="sglbl logo animation" width="350">
 </p>
 
 ---
 
-## 🏠 Home Folder Icons ([`home_icons/`](home_icons/))
+## 🏠 Home Folder Icons ([`home_icons/`](dot_icons/home_icons/))
 
 Custom icons for home directory places, applied via `gio` metadata.
 
@@ -89,7 +89,7 @@ Custom icons for home directory places, applied via `gio` metadata.
 Place icon files (`.svg` or `.png`) in the `home_icons/` directory if it's not placed yet, named after the target folder in lowercase (e.g., `appimages.svg` for `~/AppImages`). Then run:
 
 ```bash
-cd home_icons/
+cd dot_icons/home_icons/
 bash set_icons.sh
 ```
 
@@ -103,7 +103,7 @@ sudo cp dot_icons/menu_logo.svg /usr/share/gnome-shell/extensions/zorin-menu@zor
 
 ---
 
-Note: Since some of the files in the config might contain absolute paths that refer to username 'sglbl', you can replace all matches with your username on VSCode after cloning/forking the repository.
+Note: Since some of the files in the config might contain absolute paths that refer to username 'sglbl', you can replace all matches with your username on VSCode after cloning/forking the repository. Installing some of the apps on [GNU/Linux setup](https://sglbl.notion.site/linuxsetup) is necessary.
 
 ## 📝 License
 
