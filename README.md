@@ -2,7 +2,7 @@
 
 <img src="dot_local_share_applications/icons/gnulinux.png" width="200">
 
-Personal configuration files and utility scripts for a [GNU/Linux setup](https://sglbl.notion.site/linuxsetup). (Recommended: [Zorin OS](https://zorin.com/os/))
+Personal configuration files and utility scripts for a [GNU/Linux setup](https://sglbl.notion.site/linuxsetup). (My Distro/DE: [Zorin OS/GNOME](https://zorin.com/os/))
 
 ---
 
@@ -55,7 +55,7 @@ Custom `.desktop` files to register applications and file handlers in the GNOME/
 
 ---
 
-## 🧩 GNOME Extensions ([`extensions/`](extensions/))
+## 🧩 GNOME Extensions (`extensions/`)
 
 My personal collection of GNOME Shell extensions.
 

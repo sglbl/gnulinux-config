@@ -1,0 +1,10 @@
+nav:
+  - Home: README.md
+  - app_config: https://github.com/sglbl/gnulinux-config/tree/main/app_config
+  - bin: https://github.com/sglbl/gnulinux-config/tree/main/bin
+  - dot_config: https://github.com/sglbl/gnulinux-config/tree/main/dot_config
+  - dot_icons: https://github.com/sglbl/gnulinux-config/tree/main/dot_icons
+  - dot_local_share_applications: https://github.com/sglbl/gnulinux-config/tree/main/dot_local_share_applications
+  - extensions: https://github.com/sglbl/gnulinux-config/tree/main/extensions
+  - usr_share_plymouth
+append_unmatched: true
