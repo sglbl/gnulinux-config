@@ -111,6 +111,19 @@ html, body {
   color: var(--current);
 }
 
+details > summary a {
+  display: inline;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  background: none;
+}
+details > summary a:hover {
+  color: var(--accent);
+  background: none;
+}
+
 .nav-folder-empty {
   display: inline-block;
   padding: .25rem .4rem;
