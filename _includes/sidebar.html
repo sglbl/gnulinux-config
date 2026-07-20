@@ -1,19 +1,15 @@
-{%- comment -%}
-  Recursive sidebar renderer for jekyll-awesome-nav.
-  Renders the full folder tree under `page.awesome_nav`.
-  Each node may be:
-    - a folder (no `url`, has `children`)
-    - a page (has `url`, may have `children` if it's a section index)
-  Nodes may carry `current` / `contains_current` flags set by the plugin.
-{%- endcomment -%}
 <ul class="nav-tree">
   {%- for node in include.nodes -%}
     <li class="nav-item{% if node.current %} nav-current{% elsif node.contains_current %} nav-in-path{% endif %}">
-      {%- if node.url -%}
-        <a href="{{ node.url | relative_url }}"{% if node.current %} aria-current="page"{% endif %}>{{ node.title | default: node.name }}</a>
-        {%- if node.children and node.children.size > 0 -%}
+      {%- if node.url and node.children and node.children.size > 0 -%}
+        <details>
+          <summary>
+            <a href="{{ node.url | relative_url }}"{% if node.current %} aria-current="page"{% endif %} onclick="event.stopPropagation();">{{ node.title | default: node.name }}</a>
+          </summary>
           {%- include sidebar.html nodes=node.children -%}
-        {%- endif -%}
+        </details>
+      {%- elsif node.url -%}
+        <a href="{{ node.url | relative_url }}"{% if node.current %} aria-current="page"{% endif %}>{{ node.title | default: node.name }}</a>
       {%- elsif node.children and node.children.size > 0 -%}
         <details>
           <summary>{{ node.title | default: node.name }}</summary>

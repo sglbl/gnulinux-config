@@ -55,6 +55,7 @@ module DynamicFolderNav
     def build_folder(absolute_dir, relative_dir)
       children = build_dir(absolute_dir, relative_dir)
       has_readme = readme?(absolute_dir)
+      deep_readme = find_deep_readme(children) unless has_readme
 
       if !has_readme && children.empty?
         return nil
@@ -64,8 +65,22 @@ module DynamicFolderNav
         "title" => titleize(File.basename(relative_dir)),
         "children" => children
       }
-      node["url"] = "/#{relative_dir}/" if has_readme
+      if has_readme
+        node["url"] = "/#{relative_dir}/"
+      elsif deep_readme
+        node["url"] = deep_readme
+      end
       node
+    end
+
+    def find_deep_readme(children)
+      Array(children).each do |child|
+        next unless child.is_a?(Hash)
+        return child["url"] if child["url"] && child["url"].start_with?("/") && child["url"].end_with?("/")
+        nested = find_deep_readme(child["children"])
+        return nested if nested
+      end
+      nil
     end
 
     def build_file(relative_path)
