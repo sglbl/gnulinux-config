@@ -15,7 +15,7 @@
           {%- include sidebar.html nodes=node.children -%}
         {%- endif -%}
       {%- elsif node.children and node.children.size > 0 -%}
-        <details open>
+        <details>
           <summary>{{ node.title | default: node.name }}</summary>
           {%- include sidebar.html nodes=node.children -%}
         </details>
