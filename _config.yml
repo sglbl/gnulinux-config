@@ -34,7 +34,6 @@ awesome_nav:
     - "vendor/**"
     - "Gemfile"
     - "Gemfile.lock"
-    - "README.md"
 
 # A future folder README becomes that folder's index automatically.
 readme_index:
@@ -49,7 +48,7 @@ defaults:
       layout: "default"
 
 exclude:
-  - README.md
+  - index.md
   - Gemfile
   - Gemfile.lock
   - vendor

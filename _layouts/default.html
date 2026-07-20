@@ -14,8 +14,9 @@
 
   <div class="layout">
     <aside class="sidebar" aria-label="Site navigation">
-      {%- if page.awesome_nav -%}
-        {%- include sidebar.html nodes=page.awesome_nav -%}
+      {%- assign nav_nodes = page.awesome_nav | default: site.awesome_nav_tree | default: site.config.awesome_nav_tree -%}
+      {%- if nav_nodes and nav_nodes.size > 0 -%}
+        {%- include sidebar.html nodes=nav_nodes -%}
       {%- else -%}
         <p class="sidebar-empty">No navigation available on this page.</p>
       {%- endif -%}
