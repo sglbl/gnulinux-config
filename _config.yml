@@ -18,9 +18,11 @@ plugins:
   - jekyll-awesome-nav
 
 # Build navigation from the repository's documentation hierarchy.
+# Use an empty root for the repository root; "." is treated as a literal
+# directory by jekyll-awesome-nav and would exclude every root-level page.
 awesome_nav:
   enabled: true
-  root: "."
+  root: ""
   nav_filename: ".nav.yml"
   include:
     - "**/*.md"
