@@ -1,0 +1,56 @@
+# Jekyll config for the GNU/Linux config GitHub Pages site.
+# Built via GitHub Actions (see .github/workflows/jekyll.yml) because
+# jekyll-awesome-nav is not in the GitHub Pages plugin whitelist.
+
+title: "GNU/Linux Personal Config"
+description: "Documentation for the sglbl/gnulinux-config repository."
+url: "https://sglbl.github.io"
+
+# GitHub Actions supplies baseurl dynamically from the repository name.
+# Local builds use the root path unless --baseurl is provided.
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:path/:basename/
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-awesome-nav
+
+# Build navigation from the repository's documentation hierarchy.
+awesome_nav:
+  enabled: true
+  root: "."
+  nav_filename: ".nav.yml"
+  include:
+    - "**/*.md"
+    - "**/*.markdown"
+    - "**/*.html"
+  ignore:
+    - "_site/**"
+    - ".git/**"
+    - "vendor/**"
+    - "Gemfile"
+    - "Gemfile.lock"
+    - "README.md"
+
+# A future folder README becomes that folder's index automatically.
+readme_index:
+  enabled: true
+  with_front_matter: false
+  remove_originals: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - "*.gemspec"
+  - "Rakefile"

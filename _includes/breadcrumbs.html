@@ -1,0 +1,16 @@
+{%- if page.breadcrumbs and page.breadcrumbs.size > 0 -%}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    {%- for crumb in page.breadcrumbs -%}
+      <li>
+        {%- if crumb.url -%}
+          <a href="{{ crumb.url | relative_url }}">{{ crumb.title | default: crumb.name }}</a>
+        {%- else -%}
+          <span>{{ crumb.title | default: crumb.name }}</span>
+        {%- endif -%}
+        {%- unless forloop.last -%}<span class="sep" aria-hidden="true">/</span>{%- endunless -%}
+      </li>
+    {%- endfor -%}
+  </ol>
+</nav>
+{%- endif -%}
